@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:frame_flow/ecommerce.dart';
+import 'package:frame_flow/modules/home/home_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: WebPage(),
+      home: HomeScreen(),
       theme: ThemeData(
         scaffoldBackgroundColor: Color.fromARGB(255, 221, 247, 249),
 
