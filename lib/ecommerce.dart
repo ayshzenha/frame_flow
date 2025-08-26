@@ -56,7 +56,7 @@ class WebPage extends StatelessWidget {
               borderRadius: BorderRadius.circular(12),
             ),
             child: ClipRect(
-              child: Image.asset(Imageutil.superSale, fit: BoxFit.cover,),
+              child: Image.asset(Imageutil.superSale1, fit: BoxFit.cover),
             ),
           ),
           SizedBox(height: 10),
