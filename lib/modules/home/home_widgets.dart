@@ -49,21 +49,19 @@ class HomeWidgets {
           "Popular",
           style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
         ),
-        Expanded(
-          child: GridView.builder(
-            shrinkWrap: true,
-            physics: NeverScrollableScrollPhysics(),
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
-            ),
-            itemCount: catogaries.length,
-            itemBuilder: (context, index) {
-              return Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: HomeCard(imagePath: catogaries[index]),
-              );
-            },
+        GridView.builder(
+          shrinkWrap: true,
+          physics: NeverScrollableScrollPhysics(),
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
           ),
+          itemCount: catogaries.length,
+          itemBuilder: (context, index) {
+            return Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: HomeCard(imagePath: catogaries[index]),
+            );
+          },
         ),
       ],
     );
