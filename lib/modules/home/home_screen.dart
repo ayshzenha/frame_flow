@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:frame_flow/modules/home/home_widgets.dart';
+import 'package:frame_flow/utils/image_utils.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
+ 
 
   @override
   Widget build(BuildContext context) {

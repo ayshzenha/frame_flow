@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:frame_flow/modules/home/home_card.dart';
+
 import 'package:frame_flow/utils/image_utils.dart';
 
 class HomeWidgets {
+  List<String> catogaries = [
+    Imageutil.accessories,
+    Imageutil.clothing,
+    Imageutil.electronics,
+    Imageutil.shoes,
+  ];
   Widget homeBodyWidget() {
     return ListView(
       scrollDirection: Axis.vertical,
@@ -42,29 +49,21 @@ class HomeWidgets {
           "Popular",
           style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
         ),
-        SizedBox(height: 20),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            HomeCard(cardImage: Image.asset(Imageutil.shoes, fit: BoxFit.fill)),
-            HomeCard(
-              cardImage: Image.asset(Imageutil.clothing, fit: BoxFit.cover),
+        Expanded(
+          child: GridView.builder(
+            shrinkWrap: true,
+            physics: NeverScrollableScrollPhysics(),
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2,
             ),
-          ],
-        ),
-        SizedBox(height: 20),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            HomeCard(
-              cardImage: Image.asset(Imageutil.accessories, fit: BoxFit.fill),
-            ),
-            HomeCard(
-              cardImage: Image.asset(Imageutil.electronics, fit: BoxFit.fill),
-            ),
-          ],
+            itemCount: catogaries.length,
+            itemBuilder: (context, index) {
+              return Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: HomeCard(imagePath: catogaries[index]),
+              );
+            },
+          ),
         ),
       ],
     );
