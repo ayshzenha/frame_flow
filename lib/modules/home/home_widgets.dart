@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:frame_flow/modules/home/home_card.dart';
+import 'package:frame_flow/modules/home/category_card.dart';
 
 import 'package:frame_flow/utils/image_utils.dart';
 
@@ -36,18 +36,20 @@ class HomeWidgets {
           height: 200,
           width: 50,
 
-          decoration: BoxDecoration(
-            color: Colors.white,
+          child: ClipRRect(
             borderRadius: BorderRadius.circular(16),
-          ),
-          child: ClipRect(
             child: Image.asset(Imageutil.shopping, fit: BoxFit.cover),
           ),
         ),
+
         SizedBox(height: 10),
         Text(
-          "Popular",
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+          "Browse categories ",
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 30,
+            fontFamily: "Libertinus Serif Display",
+          ),
         ),
         GridView.builder(
           shrinkWrap: true,
@@ -59,7 +61,7 @@ class HomeWidgets {
           itemBuilder: (context, index) {
             return Padding(
               padding: const EdgeInsets.all(8.0),
-              child: HomeCard(imagePath: catogaries[index]),
+              child: CategoryCard(imagePath: catogaries[index]),
             );
           },
         ),

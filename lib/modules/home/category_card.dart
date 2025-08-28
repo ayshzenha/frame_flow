@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-class HomeCard extends StatelessWidget {
+class CategoryCard extends StatelessWidget {
   final String? imagePath;
-  const HomeCard({this.imagePath});
+  const CategoryCard({this.imagePath});
 
   @override
   Widget build(BuildContext context) {
@@ -10,11 +10,10 @@ class HomeCard extends StatelessWidget {
       height: 150,
       width: MediaQuery.of(context).size.width * 0.4,
 
-      decoration: BoxDecoration(
+      child: ClipRRect(
         borderRadius: BorderRadius.circular(16),
-        color: Colors.white,
+        child: Image.asset(imagePath ?? '', fit: BoxFit.cover),
       ),
-      child: Image.asset(imagePath ?? ''),
     );
   }
 }
