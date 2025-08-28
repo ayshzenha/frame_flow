@@ -39,7 +39,7 @@ class BottomBar extends StatefulWidget {
 
 class BottomBarState extends State<BottomBar> {
   int selectedIndex = 0;
-  List<String> items = ["home", "offers", "Brands", "profile"];
+
   void onItemtapped(int index) {
     setState(() {
       selectedIndex = index;
