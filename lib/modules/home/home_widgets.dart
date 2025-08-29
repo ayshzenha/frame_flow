@@ -1,29 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:frame_flow/modules/home/category_card.dart';
-import 'package:frame_flow/modules/home/feature_product_card.dart';
+import 'package:frame_flow/modules/home/custom_card.dart';
+
+import 'package:frame_flow/utils/constants.dart';
 
 import 'package:frame_flow/utils/image_utils.dart';
 
 class HomeWidgets {
-  List<String> catogaries = [
-    Imageutil.accessories,
-    Imageutil.clothing,
-    Imageutil.electronics,
-    Imageutil.shoes,
-  ];
-
-  List<String> categoryName = [
-    "Accessories",
-    "Clothing",
-    "electronics",
-    "Shoes",
-  ];
-  List<String> items = [
-    Imageutil.accessories,
-    Imageutil.clothing,
-    Imageutil.electronics,
-    Imageutil.shoes,
-  ];
+  var textw = Center(
+    child: Text(
+      "Featured Brands".toUpperCase(),
+      style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+    ),
+  );
   Widget homeBodyWidget() {
     return SingleChildScrollView(
       padding: EdgeInsets.all(15.0),
@@ -74,13 +62,13 @@ class HomeWidgets {
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
             ),
-            itemCount: catogaries.length,
+            itemCount: Constants.catogaries.length,
             itemBuilder: (context, index) {
               return Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: CategoryCard(
-                  imagePath: catogaries[index],
-                  label: categoryName[index],
+                child: CustomCard(
+                  imagePath: Constants.catogaries[index]["image"],
+                  label: Constants.catogaries[index]["name"],
                 ),
               );
             },
@@ -99,13 +87,13 @@ class HomeWidgets {
             height: 220,
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
-              itemCount: items.length,
-              itemBuilder: (context, index1) {
+              itemCount: Constants.futureBrand.length,
+              itemBuilder: (context, index) {
                 return Padding(
                   padding: EdgeInsets.all(8.0),
-                  child: FeatureProductCard(
-                    brandname: items[index1],
-                    imagePath: items[index1],
+                  child: CustomCard(
+                    label: Constants.futureBrand[index]["name"],
+                    imagePath: Constants.futureBrand[index]["image"],
                   ),
                 );
               },

@@ -1,11 +1,11 @@
 import 'dart:ui'; // for ImageFilter
 import 'package:flutter/material.dart';
 
-class CategoryCard extends StatelessWidget {
+class CustomCard extends StatelessWidget {
   final String? imagePath;
   final String? label;
 
-  const CategoryCard({this.imagePath, this.label});
+  const CustomCard({this.imagePath, this.label});
 
   @override
   Widget build(BuildContext context) {

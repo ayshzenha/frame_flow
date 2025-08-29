@@ -1,17 +1,41 @@
 import 'package:flutter/material.dart';
 import 'package:frame_flow/modules/home/home_widgets.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  int selectedIndex = 0;
+
+  // Dummy pages for each bottom nav item
+  final List<Widget> pages = [
+    HomeWidgets().homeBodyWidget(), // Home
+    Center(child: Text("Offers Page")), // Offers
+    Center(child: Text("Brands Page")), // Brands
+    Center(child: Text("Profile Page")), // Profile
+  ];
+
+  void onItemTapped(int index) {
+    setState(() {
+      selectedIndex = index;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        backgroundColor: Color(0xffFDFDFD),
-        leading: IconButton(onPressed: () {}, icon: Icon(Icons.menu_sharp)),
-        title: Text(
+        backgroundColor: const Color(0xffFDFDFD),
+        leading: IconButton(
+          onPressed: () {},
+          icon: const Icon(Icons.menu_sharp),
+        ),
+        title: const Text(
           " ShopNest",
           style: TextStyle(
             fontSize: 22,
@@ -20,56 +44,35 @@ class HomeScreen extends StatelessWidget {
           ),
         ),
         actions: [
-          IconButton(onPressed: () {}, icon: Icon(Icons.favorite)),
-          IconButton(onPressed: () {}, icon: Icon(Icons.shopping_cart)),
+          IconButton(onPressed: () {}, icon: const Icon(Icons.favorite)),
+          IconButton(onPressed: () {}, icon: const Icon(Icons.shopping_cart)),
         ],
       ),
-      bottomNavigationBar: BottomBar(),
-      body: HomeWidgets().homeBodyWidget(),
-    );
-  }
-}
 
-class BottomBar extends StatefulWidget {
-  BottomBar({super.key});
+      body: pages[selectedIndex], // 👈 Dynamic body
 
-  @override
-  State<BottomBar> createState() => BottomBarState();
-}
-
-class BottomBarState extends State<BottomBar> {
-  int selectedIndex = 0;
-
-  void onItemtapped(int index) {
-    setState(() {
-      selectedIndex = index;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return BottomNavigationBar(
-      currentIndex: selectedIndex,
-      onTap: onItemtapped,
-      selectedItemColor: Colors.teal,
-      unselectedItemColor: Colors.grey,
-      type: BottomNavigationBarType.fixed,
-
-      items: [
-        BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.percent_outlined),
-          label: "Offers",
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.storefront_rounded),
-          label: "Brands",
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.person_2_outlined),
-          label: "Profile",
-        ),
-      ],
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: selectedIndex,
+        onTap: onItemTapped,
+        selectedItemColor: Colors.teal,
+        unselectedItemColor: Colors.grey,
+        type: BottomNavigationBarType.fixed,
+        items: const [
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.percent_outlined),
+            label: "Offers",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.storefront_rounded),
+            label: "Brands",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person_2_outlined),
+            label: "Profile",
+          ),
+        ],
+      ),
     );
   }
 }
