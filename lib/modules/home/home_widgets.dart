@@ -6,12 +6,25 @@ import 'package:frame_flow/product_details.dart';
 import 'package:frame_flow/utils/constants.dart';
 
 class HomeWidgets {
-  var textw = Center(
-    child: Text(
-      "continue browsing these styles".toUpperCase(),
-      style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-    ),
-  );
+  Widget offerCard({required String offerText}) {
+    return Container(
+      height: 80,
+      width: 80,
+      decoration: BoxDecoration(
+        color: Colors.teal,
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.3), // shadow color
+            blurRadius: 6, // soften the shadow
+            spreadRadius: 2, // extend the shadow
+            offset: Offset(2, 4), // horizontal & vertical movement
+          ),
+        ],
+      ),
+      child: Text(offerText),
+    );
+  }
+
   Widget homeBodyWidget() {
     return SingleChildScrollView(
       padding: EdgeInsets.all(15.0),
@@ -34,38 +47,28 @@ class HomeWidgets {
             ),
           ),
 
-          SizedBox(height: 25),
+          SizedBox(height: 15),
+
+          OfferSlider(imageList: Constants.sliderImage),
+          SizedBox(height: 20),
           Text(
             "save & slay".toUpperCase(),
             style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
           ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Container(
-                  height: 80,
-                  width: 80,
-                  decoration: BoxDecoration(
-                    color: Colors.teal,
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black.withOpacity(0.3), // shadow color
-                        blurRadius: 6, // soften the shadow
-                        spreadRadius: 2, // extend the shadow
-                        offset: Offset(2, 4), // horizontal & vertical movement
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
+          SizedBox(height: 10),
+          Row(
+            children: [
+              offerCard(offerText: "aysha"),
+              offerCard(offerText: "aysha"),
+              offerCard(offerText: "aysha"),
+              offerCard(offerText: "aysha"),
+              offerCard(offerText: "aysha"),
+              offerCard(offerText: "aysha"),
+              offerCard(offerText: 'aysha'),
+            ],
           ),
 
-          OfferSlider(imageList: Constants.sliderImage),
-
-          SizedBox(height: 10),
+          SizedBox(height: 20),
 
           Text(
             "Browse categories",
