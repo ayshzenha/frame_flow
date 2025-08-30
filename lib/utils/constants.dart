@@ -83,4 +83,12 @@ class Constants {
       {"user": "Sara", "rating": 4, "comment": "Good battery, fits well."},
     ],
   };
+
+  static const List<String> sliderImage = [
+    Imageutil.shopping,
+    Imageutil.shoes,
+    Imageutil.clothing,
+    Imageutil.electronics,
+    Imageutil.accessories,
+  ];
 }

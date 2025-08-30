@@ -60,12 +60,12 @@ class _HomeScreenState extends State<HomeScreen> {
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
           BottomNavigationBarItem(
-            icon: Icon(Icons.percent_outlined),
-            label: "Offers",
+            icon: Icon(Icons.trending_up_outlined),
+            label: "Trending",
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.storefront_rounded),
-            label: "Brands",
+            icon: Icon(Icons.shopping_cart_checkout),
+            label: "Bag",
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person_2_outlined),

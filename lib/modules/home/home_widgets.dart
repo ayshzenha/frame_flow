@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:frame_flow/modules/home/custom_card.dart';
+import 'package:frame_flow/modules/home/offer_slider.dart';
 import 'package:frame_flow/product_details.dart';
 
 import 'package:frame_flow/utils/constants.dart';
-
-import 'package:frame_flow/utils/image_utils.dart';
 
 class HomeWidgets {
   var textw = Center(
@@ -36,16 +35,35 @@ class HomeWidgets {
           ),
 
           SizedBox(height: 25),
-
-          ClipRRect(
-            borderRadius: BorderRadius.circular(16),
-            child: Image.asset(
-              Imageutil.shopping,
-              fit: BoxFit.cover,
-              height: 200,
-              width: 400,
+          Text(
+            "save & slay".toUpperCase(),
+            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Container(
+                  height: 80,
+                  width: 80,
+                  decoration: BoxDecoration(
+                    color: Colors.teal,
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.3), // shadow color
+                        blurRadius: 6, // soften the shadow
+                        spreadRadius: 2, // extend the shadow
+                        offset: Offset(2, 4), // horizontal & vertical movement
+                      ),
+                    ],
+                  ),
+                ),
+              ],
             ),
           ),
+
+          OfferSlider(imageList: Constants.sliderImage),
 
           SizedBox(height: 10),
 
@@ -116,6 +134,7 @@ class HomeWidgets {
               },
             ),
           ),
+          SizedBox(height: 10),
         ],
       ),
     );
