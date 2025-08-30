@@ -4,8 +4,9 @@ import 'package:flutter/material.dart';
 class CustomCard extends StatelessWidget {
   final String? imagePath;
   final String? label;
+  final bool? isBgBlur;
 
-  const CustomCard({this.imagePath, this.label});
+  const CustomCard({this.imagePath, this.label, this.isBgBlur});
 
   @override
   Widget build(BuildContext context) {
@@ -24,25 +25,48 @@ class CustomCard extends StatelessWidget {
             ),
 
             // Glassmorphism container only for label
-            Align(
-              alignment: Alignment.bottomCenter,
-              child: Container(
-                margin: EdgeInsets.all(8),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(12),
-                  child: BackdropFilter(
-                    filter: ImageFilter.blur(sigmaX: 8, sigmaY: 8),
-                    child: Container(
-                      padding: EdgeInsets.symmetric(
-                        horizontal: 12,
-                        vertical: 6,
+            Visibility(
+              visible: isBgBlur ?? false,
+              replacement: Align(
+                alignment: AlignmentGeometry.bottomCenter,
+                child: Container(
+                  height: 40,
+                  width: 180,
+                  decoration: BoxDecoration(
+                    color: const Color.fromARGB(255, 171, 240, 233),
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: Center(
+                    child: Text(
+                      label ?? "",
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
                       ),
-                      color: Colors.white.withOpacity(0.2), // frosted glass
-                      child: Text(
-                        label ?? '',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              ),
+              child: Align(
+                alignment: Alignment.bottomCenter,
+                child: Container(
+                  margin: EdgeInsets.all(8),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(12),
+                    child: BackdropFilter(
+                      filter: ImageFilter.blur(sigmaX: 8, sigmaY: 8),
+                      child: Container(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 12,
+                          vertical: 6,
+                        ),
+                        color: Colors.white.withOpacity(0.2), // frosted glass
+                        child: Text(
+                          label ?? '',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                       ),
                     ),

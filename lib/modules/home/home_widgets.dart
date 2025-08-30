@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:frame_flow/modules/home/custom_card.dart';
+import 'package:frame_flow/product_details.dart';
 
 import 'package:frame_flow/utils/constants.dart';
 
@@ -8,7 +9,7 @@ import 'package:frame_flow/utils/image_utils.dart';
 class HomeWidgets {
   var textw = Center(
     child: Text(
-      "Featured Brands".toUpperCase(),
+      "continue browsing these styles".toUpperCase(),
       style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
     ),
   );
@@ -62,13 +63,14 @@ class HomeWidgets {
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
             ),
-            itemCount: Constants.catogaries.length,
+            itemCount: Constants.categories.length,
             itemBuilder: (context, index) {
               return Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: CustomCard(
-                  imagePath: Constants.catogaries[index]["image"],
-                  label: Constants.catogaries[index]["name"],
+                  imagePath: Constants.categories[index]["image"],
+                  label: Constants.categories[index]["name"],
+                  isBgBlur: true,
                 ),
               );
             },
@@ -78,7 +80,7 @@ class HomeWidgets {
 
           Center(
             child: Text(
-              "Featured Brands".toUpperCase(),
+              "Continue browsing these Products".toUpperCase(),
               style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
             ),
           ),
@@ -87,13 +89,28 @@ class HomeWidgets {
             height: 220,
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
-              itemCount: Constants.futureBrand.length,
+              itemCount: Constants.recentProducts.length,
               itemBuilder: (context, index) {
-                return Padding(
-                  padding: EdgeInsets.all(8.0),
-                  child: CustomCard(
-                    label: Constants.futureBrand[index]["name"],
-                    imagePath: Constants.futureBrand[index]["image"],
+                return GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder:
+                            (context) => ProductDetailsPage(
+                              product: Constants.productDetail,
+                            ),
+                      ),
+                    );
+                    print(Constants.productDetail);
+                  },
+                  child: Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: CustomCard(
+                      label: Constants.recentProducts[index]["name"],
+                      imagePath: Constants.recentProducts[index]["image"],
+                      isBgBlur: false,
+                    ),
                   ),
                 );
               },
