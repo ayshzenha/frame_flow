@@ -1,33 +1,43 @@
 import 'package:flutter/material.dart';
-import 'package:frame_flow/modules/home/custom_card.dart';
-import 'package:frame_flow/modules/home/offer_slider.dart';
-import 'package:frame_flow/product_details.dart';
+import 'package:frame_flow/widgets/custom_card.dart';
+import 'package:frame_flow/modules/home/widgets/offer_slider.dart';
+import 'package:frame_flow/modules/product_details/view/product_details_page.dart';
 
 import 'package:frame_flow/utils/constants.dart';
 
 class HomeWidgets {
-  Widget offerCard({required String offerText}) {
+  Widget offerCard({required String underPrice}) {
     return Container(
       height: 80,
-      width: 80,
+      width: 90,
       decoration: BoxDecoration(
-        color: Colors.teal,
+        color: const Color.fromARGB(255, 235, 91, 139),
+        borderRadius: BorderRadius.circular(12), // rounded corners
         boxShadow: [
           BoxShadow(
             color: Colors.black.withOpacity(0.3), // shadow color
             blurRadius: 6, // soften the shadow
             spreadRadius: 2, // extend the shadow
-            offset: Offset(2, 4), // horizontal & vertical movement
+            offset: const Offset(2, 4), // horizontal & vertical movement
           ),
         ],
       ),
-      child: Text(offerText),
+      alignment: Alignment.center, // centers text inside
+      child: Text(
+        'Under\n ₹${underPrice}',
+        textAlign: TextAlign.center,
+        style: const TextStyle(
+          fontSize: 16,
+          fontWeight: FontWeight.bold,
+          color: Colors.white, // better contrast on red
+        ),
+      ),
     );
   }
 
   Widget homeBodyWidget() {
     return SingleChildScrollView(
-      padding: EdgeInsets.all(15.0),
+      padding: EdgeInsets.all(10),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -51,23 +61,7 @@ class HomeWidgets {
 
           OfferSlider(imageList: Constants.sliderImage),
           SizedBox(height: 20),
-          Text(
-            "save & slay".toUpperCase(),
-            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-          ),
-          SizedBox(height: 10),
-          Row(
-            children: [
-              offerCard(offerText: "aysha"),
-              offerCard(offerText: "aysha"),
-              offerCard(offerText: "aysha"),
-              offerCard(offerText: "aysha"),
-              offerCard(offerText: "aysha"),
-              offerCard(offerText: "aysha"),
-              offerCard(offerText: 'aysha'),
-            ],
-          ),
-
+          saveSlayWidget(),
           SizedBox(height: 20),
 
           Text(
@@ -140,6 +134,26 @@ class HomeWidgets {
           SizedBox(height: 10),
         ],
       ),
+    );
+  }
+
+  Widget saveSlayWidget() {
+    return Column(crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          "save & slay".toUpperCase(),
+          style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+        ),
+        SizedBox(height: 10),
+
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: List.generate(
+            Constants.underPriceList.length,
+            (index) => offerCard(underPrice: Constants.underPriceList[index]),
+          ),
+        ),
+      ],
     );
   }
 }

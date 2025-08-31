@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:frame_flow/modules/home/home_widgets.dart';
+import 'package:frame_flow/modules/home/widgets/home_widgets.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});

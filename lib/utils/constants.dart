@@ -53,7 +53,7 @@ class Constants {
       "category": "Shoes",
       "price": 2599,
       "rating": 4.6,
-      "image": Imageutil.shoes,
+      "image": Imageutil.electronics,
     },
     {
       "id": "p1002",
@@ -63,6 +63,95 @@ class Constants {
       "rating": 4.8,
       "image": Imageutil.clothing,
     },
+    {
+      "id": "p1002",
+      "name": "Denim Jacket",
+      "category": "Clothing",
+      "price": 2999,
+      "rating": 4.8,
+      "image": Imageutil.accessories,
+    },
+    {
+      "id": "p1002",
+      "name": "Denim Jacket",
+      "category": "Clothing",
+      "price": 2999,
+      "rating": 4.8,
+      "image": Imageutil.shoes,
+    },
+    {
+      "id": "p1002",
+      "name": "Denim Jacket",
+      "category": "Clothing",
+      "price": 2999,
+      "rating": 4.8,
+      "image": Imageutil.shoes,
+    },
+     {
+      "id": "p1002",
+      "name": "Denim Jacket",
+      "category": "Clothing",
+      "price": 2999,
+      "rating": 4.8,
+      "image": Imageutil.shoes,
+    },
+     {
+      "id": "p1002",
+      "name": "Denim Jacket",
+      "category": "Clothing",
+      "price": 2999,
+      "rating": 4.8,
+      "image": Imageutil.shoes,
+    },
+     {
+      "id": "p1002",
+      "name": "Denim Jacket",
+      "category": "Clothing",
+      "price": 2999,
+      "rating": 4.8,
+      "image": Imageutil.shoes,
+    },
+     {
+      "id": "p1002",
+      "name": "Denim Jacket",
+      "category": "Clothing",
+      "price": 2999,
+      "rating": 4.8,
+      "image": Imageutil.shoes,
+    },
+     {
+      "id": "p1002",
+      "name": "Denim Jacket",
+      "category": "Clothing",
+      "price": 2999,
+      "rating": 4.8,
+      "image": Imageutil.shoes,
+    },
+     {
+      "id": "p1002",
+      "name": "Denim Jacket",
+      "category": "Clothing",
+      "price": 2999,
+      "rating": 4.8,
+      "image": Imageutil.shoes,
+    },
+     {
+      "id": "p1002",
+      "name": "Denim Jacket",
+      "category": "Clothing",
+      "price": 2999,
+      "rating": 4.8,
+      "image": Imageutil.shoes,
+    },
+     {
+      "id": "p1002",
+      "name": "Denim Jacket",
+      "category": "Clothing",
+      "price": 2999,
+      "rating": 4.8,
+      "image": Imageutil.shoes,
+    },
+    
   ];
 
   /// Product detail (single product mock)
@@ -91,4 +180,5 @@ class Constants {
     Imageutil.electronics,
     Imageutil.accessories,
   ];
+  static const List<String> underPriceList = ["99", "199", "499", "999"];
 }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:frame_flow/modules/home/home_screen.dart';
+import 'package:frame_flow/modules/home/view/home_screen.dart';
 
 void main() {
   runApp(MyApp());
