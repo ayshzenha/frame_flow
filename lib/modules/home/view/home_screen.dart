@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:frame_flow/modules/cart/view/cart_page.dart';
 import 'package:frame_flow/modules/home/widgets/home_widgets.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -14,8 +15,9 @@ class _HomeScreenState extends State<HomeScreen> {
   // Dummy pages for each bottom nav item
   final List<Widget> pages = [
     HomeWidgets().homeBodyWidget(), // Home
-    Center(child: Text("Offers Page")), // Offers
+    // Offers
     Center(child: Text("Brands Page")), // Brands
+    CartPage(),
     Center(child: Text("Profile Page")), // Profile
   ];
 

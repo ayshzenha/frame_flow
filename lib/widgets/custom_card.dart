@@ -14,6 +14,7 @@ class CustomCard extends StatelessWidget {
       width: MediaQuery.of(context).size.width * 0.4,
       child: ClipRRect(
         borderRadius: BorderRadius.circular(16),
+
         child: Stack(
           children: [
             // Background Image (not blurred)
@@ -32,8 +33,13 @@ class CustomCard extends StatelessWidget {
                 child: Container(
                   height: 40,
                   width: 180,
+
                   decoration: BoxDecoration(
-                    color: const Color.fromARGB(255, 171, 240, 233),
+                    gradient: LinearGradient(
+                      colors: [Colors.teal.shade300, Colors.teal.shade100],
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                    ),
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: Center(

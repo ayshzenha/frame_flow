@@ -41,22 +41,7 @@ class HomeWidgets {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Container(
-            height: 40,
-            padding: EdgeInsets.all(10.0),
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(12),
-            ),
-            child: TextField(
-              decoration: InputDecoration(
-                icon: Icon(Icons.search_rounded),
-                hintText: 'Search products',
-                border: InputBorder.none,
-              ),
-            ),
-          ),
-
+          searchProductWidget(),
           SizedBox(height: 15),
 
           OfferSlider(imageList: Constants.sliderImage),
@@ -138,7 +123,8 @@ class HomeWidgets {
   }
 
   Widget saveSlayWidget() {
-    return Column(crossAxisAlignment: CrossAxisAlignment.start,
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
           "save & slay".toUpperCase(),
@@ -151,6 +137,28 @@ class HomeWidgets {
           children: List.generate(
             Constants.underPriceList.length,
             (index) => offerCard(underPrice: Constants.underPriceList[index]),
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget searchProductWidget() {
+    return Column(
+      children: [
+        Container(
+          height: 40,
+          padding: EdgeInsets.all(10.0),
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(12),
+          ),
+          child: TextField(
+            decoration: InputDecoration(
+              icon: Icon(Icons.search_rounded),
+              hintText: 'Search products',
+              border: InputBorder.none,
+            ),
           ),
         ),
       ],

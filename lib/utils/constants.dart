@@ -151,7 +151,6 @@ class Constants {
       "rating": 4.8,
       "image": Imageutil.shoes,
     },
-    
   ];
 
   /// Product detail (single product mock)
