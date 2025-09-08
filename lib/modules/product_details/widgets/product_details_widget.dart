@@ -7,7 +7,7 @@ class ProductDetailsWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          /// Product Image
+       
           AspectRatio(
             aspectRatio: 1,
             child: Image.asset(product["image"][0], fit: BoxFit.cover),
@@ -18,7 +18,7 @@ class ProductDetailsWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                /// Name + Price
+               
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -44,7 +44,7 @@ class ProductDetailsWidget {
 
                 const SizedBox(height: 8),
 
-                /// Rating + Stock
+               
                 Row(
                   children: [
                     Icon(Icons.star, color: Colors.amber, size: 20),
@@ -64,7 +64,7 @@ class ProductDetailsWidget {
 
                 const SizedBox(height: 16),
 
-                /// Description
+               
                 Text(
                   product["description"],
                   style: const TextStyle(fontSize: 14, color: Colors.black87),
@@ -72,7 +72,7 @@ class ProductDetailsWidget {
 
                 const SizedBox(height: 16),
 
-                /// Color Options
+                
                 if (product["colors"].isNotEmpty) ...[
                   const Text(
                     "Available Colors:",
@@ -97,7 +97,7 @@ class ProductDetailsWidget {
 
                 const SizedBox(height: 16),
 
-                /// Reviews
+                
                 const Text(
                   "Reviews",
                   style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),

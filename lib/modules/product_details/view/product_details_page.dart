@@ -18,7 +18,7 @@ class ProductDetailsPage extends StatelessWidget {
       ),
       body: ProductDetailsWidget().productDetailsBody(product),
 
-      /// Bottom Add to Cart + Buy Now
+      
       bottomNavigationBar: ProductDetailsWidget().bottomNavWidget(),
     );
   }

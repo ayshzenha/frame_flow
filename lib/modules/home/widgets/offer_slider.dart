@@ -2,7 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
 class OfferSlider extends StatelessWidget {
-  final List<String> imageList; // dynamic list of images
+  final List<String> imageList; 
 
   const OfferSlider({super.key, required this.imageList});
 

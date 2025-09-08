@@ -1,7 +1,7 @@
 import 'package:frame_flow/utils/image_utils.dart';
 
 class Constants {
-  /// Categories
+  
   static const List<Map<String, dynamic>> categories = [
     {"id": "c1", "name": "Accessories", "image": Imageutil.accessories},
     {"id": "c2", "name": "Clothing", "image": Imageutil.clothing},
@@ -9,7 +9,7 @@ class Constants {
     {"id": "c4", "name": "Shoes", "image": Imageutil.shoes},
   ];
 
-  /// Products List (general store listing)
+
   static const List<Map<String, dynamic>> products = [
     {
       "id": "p1001",
@@ -45,7 +45,7 @@ class Constants {
     },
   ];
 
-  /// Recently viewed products
+  
   static const List<Map<String, dynamic>> recentProducts = [
     {
       "id": "p1004",
@@ -153,7 +153,7 @@ class Constants {
     },
   ];
 
-  /// Product detail (single product mock)
+  
   static const Map<String, dynamic> productDetail = {
     "id": "p1003",
     "name": "Wireless Earbuds",

@@ -12,24 +12,24 @@ class HomeWidgets {
       width: 90,
       decoration: BoxDecoration(
         color: const Color.fromARGB(255, 235, 91, 139),
-        borderRadius: BorderRadius.circular(12), // rounded corners
+        borderRadius: BorderRadius.circular(12),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.3), // shadow color
-            blurRadius: 6, // soften the shadow
-            spreadRadius: 2, // extend the shadow
-            offset: const Offset(2, 4), // horizontal & vertical movement
+            color: Colors.black.withOpacity(0.3),
+            blurRadius: 6,
+            spreadRadius: 2,
+            offset: const Offset(2, 4),
           ),
         ],
       ),
-      alignment: Alignment.center, // centers text inside
+      alignment: Alignment.center,
       child: Text(
         'Under\n ₹${underPrice}',
         textAlign: TextAlign.center,
         style: const TextStyle(
           fontSize: 16,
           fontWeight: FontWeight.bold,
-          color: Colors.white, // better contrast on red
+          color: Colors.white,
         ),
       ),
     );

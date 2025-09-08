@@ -17,36 +17,32 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         fontFamily: 'Roboto',
 
-        // Background for all screens
-        scaffoldBackgroundColor: const Color(0xFFF9F9F9), // light grey
-        // Color scheme
+        scaffoldBackgroundColor: const Color(0xFFF9F9F9),
+
         colorScheme: ColorScheme.fromSwatch().copyWith(
-          primary: const Color(0xFF009688), // Teal
-          secondary: const Color(0xFFF06292), // Pink (offers/CTA)
+          primary: const Color(0xFF009688),
+          secondary: const Color(0xFFF06292),
         ),
 
-        // AppBar theme
         appBarTheme: const AppBarTheme(
           backgroundColor: Colors.white,
           foregroundColor: Colors.black,
           elevation: 0,
           centerTitle: true,
           titleTextStyle: TextStyle(
-            color: Color(0xFF009688), // Teal brand title
+            color: Color(0xFF009688),
             fontSize: 20,
             fontWeight: FontWeight.bold,
           ),
         ),
 
-        // Bottom navigation theme
         bottomNavigationBarTheme: const BottomNavigationBarThemeData(
           backgroundColor: Colors.white,
-          selectedItemColor: Color(0xFF009688), // Teal active
-          unselectedItemColor: Colors.grey, // Grey inactive
+          selectedItemColor: Color(0xFF009688),
+          unselectedItemColor: Colors.grey,
           showUnselectedLabels: true,
         ),
 
-        // Buttons theme
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
             backgroundColor: const Color(0xFF009688),
@@ -62,9 +58,6 @@ class MyApp extends StatelessWidget {
           ),
         ),
 
-        // Card theme
-
-        // Text theme
         textTheme: const TextTheme(
           bodyLarge: TextStyle(color: Color(0xFF212121), fontSize: 16),
           bodyMedium: TextStyle(color: Color(0xFF757575), fontSize: 14),

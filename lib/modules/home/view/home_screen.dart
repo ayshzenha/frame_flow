@@ -11,47 +11,76 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int selectedIndex = 0;
+  String appBarText = "Trending";
 
-  // Dummy pages for each bottom nav item
   final List<Widget> pages = [
-    HomeWidgets().homeBodyWidget(), // Home
-    // Offers
-    Center(child: Text("Brands Page")), // Brands
+    HomeWidgets().homeBodyWidget(),
+
+    Center(child: Text("Brands Page")),
     CartPage(),
-    Center(child: Text("Profile Page")), // Profile
+    Center(child: Text("Profile Page")),
   ];
 
   void onItemTapped(int index) {
     setState(() {
       selectedIndex = index;
+
+      switch (selectedIndex) {
+        case 1:
+          appBarText = "Trending";
+          break;
+        case 2:
+          appBarText = "Shopping Bag";
+          break;
+        case 3:
+          appBarText = "Profile";
+          break;
+        default:
+          appBarText = "Home"; 
+      }
     });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        backgroundColor: const Color(0xffFDFDFD),
-        leading: IconButton(
-          onPressed: () {},
-          icon: const Icon(Icons.menu_sharp),
-        ),
-        title: const Text(
-          " ShopNest",
-          style: TextStyle(
-            fontSize: 22,
-            fontWeight: FontWeight.bold,
-            fontFamily: "Pacifico",
-          ),
-        ),
-        actions: [
-          IconButton(onPressed: () {}, icon: const Icon(Icons.favorite)),
-          IconButton(onPressed: () {}, icon: const Icon(Icons.shopping_cart)),
-        ],
-      ),
-
-      body: pages[selectedIndex], // 👈 Dynamic body
+      appBar:
+          (selectedIndex == 0)
+              ? AppBar(
+                centerTitle: true,
+                backgroundColor: const Color(0xffFDFDFD),
+                leading: IconButton(
+                  onPressed: () {},
+                  icon: const Icon(Icons.menu_sharp),
+                ),
+                title: const Text(
+                  " ShopNest",
+                  style: TextStyle(
+                    fontSize: 22,
+                    fontWeight: FontWeight.bold,
+                    fontFamily: "Pacifico",
+                  ),
+                ),
+                actions: [
+                  IconButton(
+                    onPressed: () {},
+                    icon: const Icon(Icons.favorite),
+                  ),
+                  IconButton(
+                    onPressed: () {},
+                    icon: const Icon(Icons.shopping_cart),
+                  ),
+                ],
+              )
+              : AppBar(
+                centerTitle: true,
+                leading: IconButton(
+                  onPressed: () {},
+                  icon: Icon(Icons.arrow_back),
+                ),
+                title: Text(appBarText),
+              ),
+      body: pages[selectedIndex],
 
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: selectedIndex,

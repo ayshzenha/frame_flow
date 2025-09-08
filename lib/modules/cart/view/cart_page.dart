@@ -17,7 +17,6 @@ class CartPage extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Padding(padding: EdgeInsetsGeometry.all(12)),
                 Text(
                   "Deliver to:679345",
                   style: TextStyle(color: Colors.black),
@@ -31,7 +30,7 @@ class CartPage extends StatelessWidget {
               ],
             ),
           ),
-          // 🛒 Cart Items List
+
           Expanded(
             child: ListView(
               padding: const EdgeInsets.all(16),
@@ -52,7 +51,6 @@ class CartPage extends StatelessWidget {
             ),
           ),
 
-          // 🧾 Cart Summary + Checkout
           Container(
             padding: const EdgeInsets.all(20),
             decoration: BoxDecoration(
@@ -95,7 +93,6 @@ class CartPage extends StatelessWidget {
     );
   }
 
-  // 🛍 Cart Item Widget
   Widget cartItem({
     required String image,
     required String title,
@@ -138,7 +135,7 @@ class CartPage extends StatelessWidget {
               ],
             ),
           ),
-          // Quantity + remove button
+
           Row(
             children: [
               IconButton(
@@ -163,7 +160,6 @@ class CartPage extends StatelessWidget {
     );
   }
 
-  // 🔢 Reusable Row for summary
   Widget rowText(String left, String right, {bool isBold = false}) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
