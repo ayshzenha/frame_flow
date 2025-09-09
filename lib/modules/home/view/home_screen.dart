@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:frame_flow/modules/cart/view/cart_page.dart';
 import 'package:frame_flow/modules/home/widgets/home_widgets.dart';
+import 'package:frame_flow/modules/profile/view/profile_page.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -18,7 +19,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
     Center(child: Text("Brands Page")),
     CartPage(),
-    Center(child: Text("Profile Page")),
+    ProfilePage(),
   ];
 
   void onItemTapped(int index) {
@@ -36,7 +37,7 @@ class _HomeScreenState extends State<HomeScreen> {
           appBarText = "Profile";
           break;
         default:
-          appBarText = "Home"; 
+          appBarText = "Home";
       }
     });
   }
