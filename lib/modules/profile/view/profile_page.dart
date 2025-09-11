@@ -7,11 +7,11 @@ class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(12.0),
-            child: Row(
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: ListView(
+          children: [
+            Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 Text(
@@ -36,51 +36,78 @@ class ProfilePage extends StatelessWidget {
                 ),
               ],
             ),
-          ),
-          SizedBox(height: 10),
-          ListTile(
-            title: Text(
-              "logged in via ayshazenha520@gmail.com",
-              style: TextStyle(color: Colors.grey),
-            ),
-          ),
 
-          profileList(
-            firstTitle: "Order",
-            secondTitle: "Check your orders status (track,return,cancel etc) ",
-            listIcon: Icon(Icons.shopping_bag_outlined),
-          ),
-          lineDivider,
-          profileList(
-            firstTitle: "Wishlist",
-            secondTitle: "check your wishlist  ",
-            listIcon: Icon(Icons.favorite_outline_sharp),
-          ),
-          lineDivider,
-          profileList(
-            firstTitle: "Wallet",
-            secondTitle: "Check your abayanest wallet balance ",
-            listIcon: Icon(Icons.account_balance_wallet),
-          ),
-          lineDivider,
-          profileList(
-            firstTitle: "Addresses",
-            secondTitle: "Manage your saved addresses",
-            listIcon: Icon(Icons.self_improvement),
-          ),
-          lineDivider,
-          profileList(
-            firstTitle: "payment methods",
-            secondTitle: "manage your saved payment methods ",
-            listIcon: Icon(Icons.wallet_travel_sharp),
-          ),
-          lineDivider,
-          profileList(
-            firstTitle: "Logout",
-            secondTitle: "Edit/update your profile details and more) ",
-            listIcon: Icon(Icons.logout),
-          ),
-        ],
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: ListTile(
+                title: Text(
+                  "logged in via ayshazenha520@gmail.com",
+                  style: TextStyle(color: Colors.grey),
+                ),
+              ),
+            ),
+
+            profileList(
+              firstTitle: "Order",
+              secondTitle:
+                  "Check your orders status (track,return,cancel etc) ",
+              listIcon: Icon(Icons.shopping_bag_outlined),
+              clr: Colors.black,
+            ),
+            lineDivider,
+            profileList(
+              firstTitle: "Wishlist",
+              secondTitle: "check your wishlist  ",
+              listIcon: Icon(Icons.favorite_outline_sharp),
+              clr: Colors.black,
+            ),
+            lineDivider,
+            profileList(
+              firstTitle: "Wallet",
+              secondTitle: "Check your abayanest wallet balance ",
+              listIcon: Icon(Icons.account_balance_wallet),
+              clr: Colors.black,
+            ),
+            lineDivider,
+            profileList(
+              firstTitle: "Addresses",
+              secondTitle: "Manage your saved addresses",
+              listIcon: Icon(Icons.self_improvement),
+              clr: Colors.black,
+            ),
+            lineDivider,
+            profileList(
+              firstTitle: "payment methods",
+              secondTitle: "manage your saved payment methods ",
+              listIcon: Icon(Icons.wallet_travel_sharp),
+              clr: Colors.black,
+            ),
+            lineDivider,
+            Column(
+              children: [
+                Container(
+                  height: 50,
+                  width: 100,
+
+                  decoration: BoxDecoration(
+                    color: Colors.redAccent,
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: Center(
+                    child: Text(
+                      "Logout",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -90,10 +117,11 @@ Widget profileList({
   required String firstTitle,
   required String secondTitle,
   required Icon listIcon,
+  required Color clr,
 }) {
   return ListTile(
     trailing: listIcon,
-    title: Text(firstTitle, style: TextStyle(fontSize: 20)),
+    title: Text(firstTitle, style: TextStyle(fontSize: 20, color: clr)),
     subtitle: Text(secondTitle, style: TextStyle(color: Colors.grey)),
   );
 }
