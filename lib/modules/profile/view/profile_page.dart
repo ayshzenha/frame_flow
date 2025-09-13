@@ -85,21 +85,26 @@ class ProfilePage extends StatelessWidget {
             lineDivider,
             Column(
               children: [
-                Container(
-                  height: 50,
-                  width: 100,
+                GestureDetector(
+                  onTap: () {
+                    print("hello");
+                  },
+                  child: Container(
+                    height: 50,
+                    width: 100,
 
-                  decoration: BoxDecoration(
-                    color: Colors.redAccent,
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                  child: Center(
-                    child: Text(
-                      "Logout",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 16,
-                        fontWeight: FontWeight.w700,
+                    decoration: BoxDecoration(
+                      color: Colors.redAccent,
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    child: Center(
+                      child: Text(
+                        "Logout",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 16,
+                          fontWeight: FontWeight.w700,
+                        ),
                       ),
                     ),
                   ),
@@ -119,9 +124,12 @@ Widget profileList({
   required Icon listIcon,
   required Color clr,
 }) {
-  return ListTile(
-    trailing: listIcon,
-    title: Text(firstTitle, style: TextStyle(fontSize: 20, color: clr)),
-    subtitle: Text(secondTitle, style: TextStyle(color: Colors.grey)),
+  return GestureDetector(
+    onTap: () {},
+    child: ListTile(
+      trailing: listIcon,
+      title: Text(firstTitle, style: TextStyle(fontSize: 20, color: clr)),
+      subtitle: Text(secondTitle, style: TextStyle(color: Colors.grey)),
+    ),
   );
 }

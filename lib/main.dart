@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:frame_flow/modules/home/view/home_screen.dart';
+import 'package:frame_flow/modules/login_details/view/login_details_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const HomeScreen(),
+      home: const LoginDetailsPage(),
 
       theme: ThemeData(
         fontFamily: 'Roboto',
